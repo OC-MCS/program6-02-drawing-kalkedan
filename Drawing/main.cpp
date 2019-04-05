@@ -37,15 +37,12 @@ int main()
 	{
 		cout << "doe not have anything " << endl;
 	}
-	if (!inputfile)
-	{
-		cout << "input does not have anything in it" << endl;
-	}
+	
 	else 
 	{
 		settingsMgr.readfile(file);
 		
-		shapeMgr.ReadShapes(inputfile);
+		shapeMgr.ReadShapes(file);
 		file.close();
 		inputfile.close();
 	}
@@ -61,11 +58,11 @@ int main()
 				// ****** Add code here to write all data to shapes file
 				
 				file.open("shapes.bin", ios::out | ios::binary);
-				inputfile.open("shapes.bin", ios::out | ios::binary);
+		
 
 
 				settingsMgr.writefile(file);
-				shapeMgr.writeShapes(inputfile);
+				shapeMgr.writeShapes(file);
 				file.close();
 				inputfile.close();
 			}

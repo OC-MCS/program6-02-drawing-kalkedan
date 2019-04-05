@@ -7,12 +7,12 @@ using namespace std;
 using namespace sf;
 
 // finish the ShapeMgr class.
-struct shape1
-{
-	unsigned color;
-	ShapeEnum shape;
-	Vector2f  position;
-};
+//struct shape1
+//{
+//	unsigned color;
+//	ShapeEnum shape;
+//	Vector2f  position;
+//};
 
 class ShapeMgr
 {
@@ -46,30 +46,28 @@ public:
 	void writeShapes(fstream &inputfile)
 	{
 		
-		shape1 set1;
+		set set1;
 
 		for (int i = 0; i < (shapes.size()); i++)
 		{
-			
+			set1 = shapes[i]->getFileRecord();
 			
 		inputfile.write(reinterpret_cast<char*>(&set1), sizeof(set1));
-		Color acolor(set1.color);
-			
-		addShape(set1.position, set1.shape, acolor);
+		
 		}
 		
 	}
 	void ReadShapes(fstream &inputfile)
 	{
-		shape1 set;
+		set set2;
 		
-		while (inputfile.read(reinterpret_cast<char*>(&(set)), sizeof(set)))
+		while (inputfile.read(reinterpret_cast<char*>(&(set2)), sizeof(set2)))
 		{
-			Color acolor(set.color);
+			Color acolor(set2.color);
 
-			addShape(set.position, set.shape, acolor);
+			addShape(set2.position, set2.shape, acolor);
 		
-			inputfile.read(reinterpret_cast<char*>(&set), sizeof(set));
+			inputfile.read(reinterpret_cast<char*>(&set2), sizeof(set2));
 		}
 	}
 	
