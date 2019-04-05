@@ -10,19 +10,39 @@ using namespace sf;
 class DrawingUI
 {
 private:
+	Vector2f post;
+	RectangleShape drawingSquare;
 
 public:
 	DrawingUI(Vector2f p)
 	{
+		post = p;
 	}
 
-	void draw(RenderWindow& win, ShapeMgr *mgr)
+void draw(RenderWindow& win, ShapeMgr *mgr)
 	{
-	}
+		
+		drawingSquare.setPosition(250, 20);
+		drawingSquare.setSize(Vector2f(800, 800));
+		drawingSquare.setOutlineColor(Color::White);
+		drawingSquare.setOutlineThickness(2);
+		drawingSquare.setFillColor(Color::Black);
+		win.draw(drawingSquare);
+		int x = 0;
+		vector<DrawingShape*> shape;
+		shape =* mgr->getShapeVec();
+		for(int x=0;x < shape.size();x++)
+		{
+			shape[x]->draw(win);
+		}
+}
 	
-	bool isMouseInCanvas(Vector2f mousePos)
+bool isMouseInCanvas(Vector2f mousePos)
 	{
-		return false; // just to make it compile
+		if (drawingSquare.getGlobalBounds().contains(mousePos))
+			return true; // just to make it compile
+		else
+			return false;
 	}
 
 };

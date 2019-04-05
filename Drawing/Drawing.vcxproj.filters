@@ -35,10 +35,18 @@
     <ClInclude Include="ShapeMgr.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\kal%27sDoc2019\Programing II\program6\Drawing\resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="shapes.bin">
+    <ResourceCompile Include="..\..\..\..\kal%27sDoc2019\Programing II\program6\Drawing\Drawing.rc">
       <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\kal%27sDoc2019\Programing II\project6(1)\Drawing\shapes.bin">
+      <Filter>Source Files</Filter>
     </None>
   </ItemGroup>
 </Project>

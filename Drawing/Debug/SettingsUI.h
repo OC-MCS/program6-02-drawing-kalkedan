@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include<fstream>
 using namespace std;
 using namespace sf;
 #include "SettingsMgr.h"
@@ -14,24 +15,23 @@ private:
 	CircleShape redcircle;
 	CircleShape greencircle;
 	CircleShape whitecircle;
-
-
+	
+	
 	CircleShape blueBtn;
 
-	RectangleShape squarebtn;
+	RectangleShape squarebtn; 
 	RectangleShape drawingSquare;
-
+	
 public:
 	SettingsUI(SettingsMgr *mgr)
 	{
 		manager = mgr;
 	}
 	void handleMouseUp(Vector2f mouse)
-	{
-		if (blueBtn.getGlobalBounds().contains(mouse))
+	{		if (blueBtn.getGlobalBounds().contains(mouse))
 		{
-			manager->SetColor(Color::Blue);
-
+		manager->SetColor(Color::Blue);
+		
 		}
 		if (redcircle.getGlobalBounds().contains(mouse))
 		{
@@ -57,7 +57,7 @@ public:
 		Font font1;
 		if (!font1.loadFromFile("C:\\windows\\Fonts\\arial.ttf"))
 		{
-			//	die ("couldn't load font");
+		//	die ("couldn't load font");
 		}
 		Text title1("Selected Color", font1, 25);
 		title1.setPosition(5, 6);
@@ -73,7 +73,7 @@ public:
 			blueBtn.setFillColor(Color::Blue);
 		}
 		else
-			blueBtn.setFillColor(Color::Transparent);
+		blueBtn.setFillColor( Color::Transparent);
 		win.draw(blueBtn);
 		Vector2f pos2(5, 160);
 
@@ -86,7 +86,7 @@ public:
 			redcircle.setFillColor(Color::Red);
 		}
 		else
-			redcircle.setFillColor(Color::Transparent);
+		redcircle.setFillColor(Color::Transparent);
 		win.draw(redcircle);
 		Vector2f pos3(5, 240);
 
@@ -99,10 +99,10 @@ public:
 			greencircle.setFillColor(Color::Green);
 		}
 		else
-			greencircle.setFillColor(Color::Transparent);
+		greencircle.setFillColor(Color::Transparent);
 		win.draw(greencircle);
-
-
+		
+		
 		if (!font1.loadFromFile("C:\\windows\\Fonts\\arial.ttf"))
 		{
 			//	die ("couldn't load font");
@@ -122,7 +122,7 @@ public:
 		}
 		else
 
-			whitecircle.setFillColor(Color::Transparent);
+		whitecircle.setFillColor(Color::Transparent);
 		win.draw(whitecircle);
 
 		Vector2f position(5, 400);
@@ -136,8 +136,8 @@ public:
 			squarebtn.setFillColor(Color::White);
 		}
 		else
-			squarebtn.setFillColor(Color::Transparent);
+		squarebtn.setFillColor(Color::Transparent);
 		win.draw(squarebtn);
 	}
-
+	
 };

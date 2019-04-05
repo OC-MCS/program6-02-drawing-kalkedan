@@ -152,6 +152,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\kal%27sDoc2019\Programing II\program6\Drawing\resource.h" />
     <ClInclude Include="DrawingUI.h" />
     <ClInclude Include="SettingsMgr.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
@@ -165,7 +166,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="shapes.bin" />
+    <ResourceCompile Include="..\..\..\..\kal%27sDoc2019\Programing II\program6\Drawing\Drawing.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\kal%27sDoc2019\Programing II\project6(1)\Drawing\shapes.bin" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
